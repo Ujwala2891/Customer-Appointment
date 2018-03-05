@@ -1,0 +1,5 @@
+com\test\dao\AppointmentDao.class
+com\test\domain\Appointment.class
+com\test\services\AppointmentService.class
+com\test\controller\AppController.class
+com\test\controller\HomeController.class
