@@ -81,11 +81,7 @@
 								<form:input path="date" type="date" class="form-control" data-provide="datepicker"
 										data-ng-model="datePar" required="required" placeholder="Enter Date "/>
 										  
-     
-    </div>
-	
-		
-										</td>
+   				</td>
 							</tr>
 							<tr>
 								<td><label>Time </label></td>
@@ -116,9 +112,6 @@
 	
 	
 	
-	
-	
-	
 <!--  Pop Up BOX  -->	
 	
 	<div id="myModal" class="modal">
@@ -135,10 +128,6 @@
 	
 	
 	
-	
-	
-	
-	
 	<div id="search-content">
 	<div class="row">
 	
@@ -152,20 +141,20 @@
 
 <div class="col-lg-3 col-md-6 col-sm-6">
 </div>
-
-<div class="col-lg-3 col-md-6 col-sm-6"  ng-init="display1='Show All Records'; display2='Hide'">
+	</div>
+	
+	<br>
+	
+	
+<%-- <div class="col-lg-3 col-md-6 col-sm-6"  ng-init="display1='Show All Records'; display2='Hide'">
 <button type="button" class="btn btn-danger" id="showAll-button" ng-click="showAllRows=!showAllRows;showSearchResults = false"> {{ !showAllRows ? display1 : display2 }} </button>
-</div>
+</div> 
 		
-		</div>
-
-
-
-		<br>
-		<!--  Result Table -->
+		
+		 <!--  Result Table -->
 		<div class="container"  id="result-table">
 
-			<table class="table table-striped" ng-show="showAllRows">
+			 <table class="table table-striped" ng-show="showAllRows">
 				<thead>
 					<tr>
 						<th>Date</th>
@@ -184,9 +173,11 @@
 					</c:forEach>
 
 				</tbody>
-			</table>
+			</table> 
+			</div> --%>
 			
-			<table class="table table-striped" ng-show="showSearchResults">
+			<div  ng-show="showResultTable" id="result-table">    
+			<table class="table table-striped" >
 				<thead>
 					<tr>
 						<th>Date</th>
@@ -196,10 +187,10 @@
 				</thead>
 				<tbody>
 
-					<tr ng-repeat="x in appList  |  filter: temptext">
+					<tr ng-repeat="x in appList | filter:temptext "  >
         <td>{{ x.date}}</td>
         <td>{{ x.time }}</td>
-        <td>{{ x.desc }}</td>
+        <td>{{ x.description }}</td>
       </tr>
 
 				</tbody>
@@ -208,7 +199,7 @@
 		</div>
 		
 	</div>
-	<!--  Result Table - Closing  -->
+	<!--  Result Table - Closing   -->
 
 </body>
 </html>
