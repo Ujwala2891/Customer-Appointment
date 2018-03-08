@@ -31,18 +31,21 @@ public class JacksonController {
 
 		List<Appointment> appointments = appointmentService.loadAll();
 		
-		StringBuilder string = new StringBuilder();
+		StringBuilder strData = new StringBuilder();
 		
 		for (Appointment appointment : appointments) {
 			com.fasterxml.jackson.databind.ObjectMapper mapperObj = new com.fasterxml.jackson.databind.ObjectMapper();
 	        try {
 	            String jsonStr = mapperObj.writeValueAsString(appointment);
-	            string.append(jsonStr);
+	            strData.append(jsonStr+",");
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        }
 		}
-		return string.toString();
+		
+		int len = strData.length(); 
+		strData = strData.deleteCharAt(len-1);
+		return "["+strData.toString()+"]";
 	}
 		
 		
